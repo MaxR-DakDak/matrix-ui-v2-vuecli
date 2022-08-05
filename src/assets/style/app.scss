@@ -1,0 +1,78 @@
+@import 'fonts';
+@import 'variables';
+
+
+:root {
+  --font-family: Montserrat, serif;
+  --font-size: 14px;
+  --font-weight-mid: 600;
+  --black: black;
+  --black-25: #252525;
+  --white: white;
+  --mid-white: #f6f6f6;
+  --dark-white: #f1f1f1;
+  --mid-grey: #979797;
+  --dark-grey: #7c7c7c;
+  --linear-dark-grey: linear-gradient(-25deg, #25252A 0%, #50505A 100%);
+  --cyan: #0DBBFF;
+  --filter-orange: invert(46%) sepia(90%) saturate(528%) hue-rotate(3deg) brightness(110%) contrast(103%);
+  --icon-size: 18px;
+  --transition-all-fast: all 0.25s cubic-bezier(.17, .67, .3, .92);
+  --transition-cubic-bezier: cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  --z-index-tooltip: 1010;
+  --z-index-main-menu: 1000;
+  --z-index-side-menu: 900;
+  --box-shadow-all-menu: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  --vue-menu-side-width: 60px;
+  --vue-menu-side-width-active: 250px;
+  --vue-menu-main-height: 40px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  font-size: var(--font-size);
+  font-family: var(--font-family)
+}
+
+
+/*vue_tooltip*/
+.vue_tooltip {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vue_tooltip .vue_tooltip__text {
+  visibility: hidden;
+  background-color: var(--black-25);
+  color: var(--white);
+  text-align: center;
+  padding: 5px 15px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: var(--z-index-tooltip);
+  top: 42px;
+  left: 0;
+}
+
+.vue_tooltip:hover .vue_tooltip__text {
+  visibility: visible;
+}
+
+
+/*vue_transition_component_fade*/
+.vue_transition_component_fade-enter-active {
+  transition: all .1s var(--transition-cubic-bezier)
+}
+
+.vue_transition_component_fade-enter {
+  transform: translateY(-25px);
+  opacity: 0;
+
+  @include md {
+    transform: translateX(-10px);
+  }
+}
