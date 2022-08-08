@@ -13,18 +13,14 @@
 			</MenuMainButton>
 		</template>
 
-		<template v-for="(link, key) in linksSideMenuGetFiltered">
-			<keep-alive :key="key">
-				<transition name="vue_transition_component_fade" mode="out-in">
-					<MenuSideButton
-						:title="link.title"
-						:icon-only="css.onlyIcon"
-						:link="link.link"
-						:items="link.items">
-					</MenuSideButton>
-				</transition>
-			</keep-alive>
-		</template>
+		<MenuSideButton
+			v-for="item in linksSideMenuGetFiltered"
+			:key="item.title"
+			:title="item.title"
+			:icon-only="css.onlyIcon"
+			:link="item.link"
+			:items="item.items">
+		</MenuSideButton>
 
 		<VSpacer></VSpacer>
 

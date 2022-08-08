@@ -61,18 +61,3 @@ body {
 .vue_tooltip:hover .vue_tooltip__text {
   visibility: visible;
 }
-
-
-/*vue_transition_component_fade*/
-.vue_transition_component_fade-enter-active {
-  transition: all .1s var(--transition-cubic-bezier)
-}
-
-.vue_transition_component_fade-enter {
-  transform: translateY(-25px);
-  opacity: 0;
-
-  @include md {
-    transform: translateX(-10px);
-  }
-}
