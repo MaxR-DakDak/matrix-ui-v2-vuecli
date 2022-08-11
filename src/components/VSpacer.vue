@@ -1,5 +1,5 @@
 <template>
-	<div style="flex-grow: 1"></div>
+	<div class="v_spacer"></div>
 </template>
 
 <script>
@@ -9,5 +9,7 @@ export default {
 </script>
 
 <style scoped>
-
+.v_spacer {
+	flex-grow: 1;
+}
 </style>

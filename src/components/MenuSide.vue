@@ -1,5 +1,5 @@
 <template>
-	<div v-if="uiGetAll.showSideMenu" class="vue-menu-side"
+	<div v-if="uiGetAll.showSideMenu" class="menu_side"
 	     :class="{active: css.lock, hover: uiGetAll.activeSideMenu}"
 	     @mouseover="checkMouseOver()"
 	     @mouseleave="checkMouseLeave()">
@@ -93,14 +93,14 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/style/app.scss";
 
-.vue-menu-side {
+.menu_side {
 	display: flex;
 	flex-direction: column;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100vh;
-	width: var(--vue-menu-side-width);
+	width: var(--menu-side-width);
 	gap: 5px;
 	z-index: var(--z-index-side-menu);
 	background: var(--linear-dark-grey);
@@ -131,7 +131,7 @@ export default {
 	}
 
 	&.hover {
-		width: var(--vue-menu-side-width-active);
+		width: var(--menu-side-width-active);
 	}
 
 	&.active {

@@ -27,6 +27,29 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+/*vue_tooltip*/
+.vue_tooltip {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.vue_tooltip .vue_tooltip__text {
+	visibility: hidden;
+	background-color: var(--black-25);
+	color: var(--white);
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+	position: absolute;
+	z-index: var(--z-index-tooltip);
+	top: 42px;
+	left: 0;
+}
+
+.vue_tooltip:hover .vue_tooltip__text {
+	visibility: visible;
+}
 </style>

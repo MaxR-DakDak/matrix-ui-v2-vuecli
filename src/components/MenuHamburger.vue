@@ -1,5 +1,5 @@
 <template>
-	<div @click="activateHamburger()" class="vue_menu_hamburger" :class="{active: this.uiGetAll.showSideMenu}">
+	<div @click="activateHamburger()" class="menu_hamburger" :class="{active: this.uiGetAll.showSideMenu}">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vue_menu_hamburger {
+.menu_hamburger {
 	width: 36px;
 	height: 18px;
 	position: relative;

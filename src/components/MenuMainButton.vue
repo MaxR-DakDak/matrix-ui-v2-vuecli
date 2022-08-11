@@ -1,16 +1,16 @@
 <template>
 	<div>
 		<template v-if="button.title">
-			<div class="vue_menu_main_button"
+			<div class="menu_main_button"
 			     :class="{selected: selected, dark: dark}"
 			     @click="checkAction">
 				{{ button.title }}
 			</div>
 		</template>
 		<template v-else-if="button.icon">
-			<div class="vue_menu_main_button vue_tooltip"
+			<div class="menu_main_button vue_tooltip"
 			     @click="checkAction">
-				<img class="vue_menu_main_button__img"
+				<img class="menu_main_button__img"
 				     :src="require('@/assets/' + button.icon)"
 				     :alt="button.icon">
 				<VTooltip v-if="button.tooltip">{{ button.tooltip }}</VTooltip>
@@ -87,7 +87,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/style/app.scss";
 
-.vue_menu_main_button {
+.menu_main_button {
 	padding: 5px 15px;
 	border-radius: 5px;
 	cursor: pointer;

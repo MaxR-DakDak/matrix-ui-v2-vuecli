@@ -1,43 +1,43 @@
 <template>
-	<div class="vue_menu_side_button"
+	<div class="side_button"
 	     :class="{small: iconOnly, active: Object.keys(this.items).length ? this.showDropItems : false, selected: selected}">
-		<div @click="checkAction()" class="vue_menu_side_button__main_row" :class="{active: !iconOnly}">
+		<div @click="checkAction()" class="side_button__main_row" :class="{active: !iconOnly}">
 			<template v-if="iconName">
-				<img class="vue_menu_side_button__main-icon"
+				<img class="side_button__main-icon"
 				     :class="{grow: iconOnly}"
 				     :src="require('@/assets/' + iconName + '.svg')"
 				     alt="user">
 			</template>
 			<template v-else>
-                <span class="vue_menu_side_button__main-icon"
+                <span class="side_button__main-icon"
                       :class="{grow: iconOnly}">{{ getFirstLetter(title) }}
                 </span>
 			</template>
 
 			<template v-if="!iconOnly">
-                <span class="vue_menu_side_button__title"
+                <span class="side_button__title"
                       :class="{active: !iconOnly}"> {{ title }}
                 </span>
 				<template v-if="Object.keys(this.items).length">
-					<img class="vue_menu_side_button__triangle-icon"
+					<img class="side_button__triangle-icon"
 					     :class="{active: showDropItems}"
 					     src="@/assets/triangle-icon.svg"
 					     alt="drop">
 				</template>
 			</template>
 		</div>
-		<div class="vue_menu_side_button__drop_rows"
+		<div class="side_button__drop_rows"
 		     :class="{active: Object.keys(this.items).length ? this.showDropItems : false}">
 			<template v-for="item in items">
-				<a class="vue_menu_side_button__drop-link"
+				<a class="side_button__drop-link"
 				   :key="item.url"
 				   :class="{selected: item.selected, active: showDropItems, padding: !iconOnly}"
 				   :href="'#' + item.url">
-						<span class="vue_menu_side_button__drop-icon"
+						<span class="side_button__drop-icon"
 						      :class="{grow: iconOnly}">
 							{{ getFirstLetter(item.title) }}
 						</span>
-					<span v-if="!iconOnly" class="vue_menu_side_button__title"> {{ item.title }}</span>
+					<span v-if="!iconOnly" class="side_button__title"> {{ item.title }}</span>
 				</a>
 			</template>
 		</div>
@@ -127,7 +127,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vue_menu_side_button {
+.side_button {
 	color: var(--white);
 	border-radius: 5px;
 	padding-left: 5px;

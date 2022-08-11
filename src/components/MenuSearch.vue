@@ -1,39 +1,39 @@
 <template>
-	<div class="vue_search_global" :class="{active: show}">
+	<div class="menu_search" :class="{active: show}">
 		<input v-model="searchInput" placeholder="Search. Type some SN or Order (TEST)" type="text">
 		<template v-if="showSearchData()">
 			<div v-for="item in showSearchData()"
 			     :key="item"
-			     class="vue_search_global__list">
+			     class="menu_search__list">
 				<template v-if="item.sn && item.sn.trim().toLowerCase() === searchWord()">
-					<a class="vue_search_global__link"
+					<a class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#support/warrantyedit/' + item.sn">
 						Warranty Check
 					</a>
 					<a v-if="item.incoming_order_name"
-					   class="vue_search_global__link"
+					   class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#orders/viewincoming/' + item.incoming_order_name">
 						Incoming: {{ item.incoming_order_name }}
 					</a>
 					<a v-if="item.lastOrder"
-					   class="vue_search_global__link"
+					   class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#orders/viewid/' + item.lastOrder">
 						Order: {{ item.lastOrder }}
 					</a>
 					<a v-if="item.lastEvent"
-					   class="vue_search_global__link"
+					   class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#shipping/viewname/' + item.lastEvent">
 						Shipment: {{ item.lastEvent }}
 					</a>
 				</template>
 				<template v-else-if="item.name && item.name.trim().toLowerCase() === searchWord()">
-					<a class="vue_search_global__link"
+					<a class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#orders/viewid/' + item.id">
 						Order: {{ item.name }}
 					</a>
 				</template>
 				<template v-else-if="item.document_name && item.document_name.trim().toLowerCase() === searchWord()">
-					<a class="vue_search_global__link"
+					<a class="menu_search__link"
 					   :href="'https://192.168.0.107:5443/#invoices/view/' + item.id">
 						Invoice: {{ item.document_name }}
 					</a>
@@ -99,7 +99,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/style/app.scss";
 
-.vue_search_global {
+.menu_search {
 	visibility: hidden;
 	width: 350px;
 	z-index: var(--z-index-main-menu);

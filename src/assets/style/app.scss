@@ -23,9 +23,9 @@
   --z-index-main-menu: 1000;
   --z-index-side-menu: 900;
   --box-shadow-all-menu: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  --vue-menu-side-width: 60px;
-  --vue-menu-side-width-active: 250px;
-  --vue-menu-main-height: 40px;
+  --menu-side-width: 60px;
+  --menu-side-width-active: 250px;
+  --menu-main-height: 40px;
 }
 
 body {
@@ -36,28 +36,3 @@ body {
   font-family: var(--font-family)
 }
 
-
-/*vue_tooltip*/
-.vue_tooltip {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vue_tooltip .vue_tooltip__text {
-  visibility: hidden;
-  background-color: var(--black-25);
-  color: var(--white);
-  text-align: center;
-  padding: 5px 15px;
-  border-radius: 5px;
-  position: absolute;
-  z-index: var(--z-index-tooltip);
-  top: 42px;
-  left: 0;
-}
-
-.vue_tooltip:hover .vue_tooltip__text {
-  visibility: visible;
-}

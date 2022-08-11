@@ -1,5 +1,5 @@
 <template>
-	<div class="vue-menu-main" :class="{resize: uiGetAll.activeSideMenu}">
+	<div class="window_main" :class="{resize: uiGetAll.activeSideMenu}">
 		<slot></slot>
 	</div>
 </template>
@@ -16,19 +16,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vue-menu-main {
+.window_main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: calc(100vh - var(--vue-menu-main-height));
-	width: calc(100% - var(--vue-menu-side-width));
+	min-height: calc(100vh - var(--menu-main-height));
+	width: calc(100% - var(--menu-side-width));
 	color: var(--black);
 	float: right;
-	padding-top: var(--vue-menu-main-height);
+	padding-top: var(--menu-main-height);
 	transition: var(--transition-all-fast);
 
 	&.resize {
-		width: calc(100% - var(--vue-menu-side-width-active))
+		width: calc(100% - var(--menu-side-width-active))
 	}
 }
 </style>

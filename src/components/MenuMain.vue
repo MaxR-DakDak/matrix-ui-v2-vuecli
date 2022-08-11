@@ -1,5 +1,5 @@
 <template>
-	<div class="vue-menu-main">
+	<div class="menu_main">
 		<template v-if="uiGetAll.mobileCss">
 			<MenuHamburger></MenuHamburger>
 		</template>
@@ -23,9 +23,8 @@
 
 <script>
 import MenuMainButton from '@/components/MenuMainButton.vue'
-import MenuHamburger from '@/components/MenuHamburger.vue'
+import MenuHamburger  from '@/components/MenuHamburger.vue'
 import VSpacer        from '@/components/VSpacer'
-
 import {mapGetters}   from "vuex";
 
 export default {
@@ -42,12 +41,12 @@ export default {
 </script>
 
 <style scoped>
-.vue-menu-main {
+.menu_main {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: var(--vue-menu-main-height);
+	height: var(--menu-main-height);
 	box-sizing: border-box;
 	z-index: var(--z-index-main-menu);
 	background-color: var(--white);
