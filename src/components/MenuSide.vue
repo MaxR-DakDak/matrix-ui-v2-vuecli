@@ -15,6 +15,7 @@
 
 		<MenuSideButton
 			v-for="item in linksSideMenuGetFiltered"
+			:iconName="item.icon"
 			:key="item.title"
 			:title="item.title"
 			:icon-only="css.onlyIcon"
@@ -27,7 +28,7 @@
 		<MenuSideButton
 			v-if="!uiGetAll.mobileCss"
 			:title="!css.lock ? 'Lock Menu' : 'Unlock Menu'"
-			icon-name="lock-icon"
+			icon-name="lock_icon"
 			:icon-only="css.onlyIcon"
 			@click.native="css.lock = !css.lock">
 		</MenuSideButton>

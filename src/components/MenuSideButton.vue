@@ -2,10 +2,10 @@
 	<div class="side_button"
 	     :class="{small: iconOnly, active: Object.keys(this.items).length ? this.showDropItems : false, selected: selected}">
 		<div @click="checkAction()" class="side_button__main_row" :class="{active: !iconOnly}">
-			<template v-if="iconName">
+			<template v-if="checkIfIconExist()">
 				<img class="side_button__main-icon"
 				     :class="{grow: iconOnly}"
-				     :src="require('@/assets/' + iconName + '.svg')"
+				     :src="checkIfIconExist()"
 				     alt="user">
 			</template>
 			<template v-else>
@@ -21,7 +21,7 @@
 				<template v-if="Object.keys(this.items).length">
 					<img class="side_button__triangle-icon"
 					     :class="{active: showDropItems}"
-					     src="@/assets/triangle-icon.svg"
+					     src="@/assets/triangle_icon.svg"
 					     alt="drop">
 				</template>
 			</template>
@@ -89,6 +89,16 @@ export default {
 				return e.charAt(0).toUpperCase()
 			}).join('')
 		},
+		checkIfIconExist() {
+			try {
+				const icon_name = this.iconName
+				const icon_file = require('@/assets/' + icon_name.replace('.svg', '') + '.svg')
+				return icon_file ? icon_file : false
+			}
+			catch (e) {
+				console.log('Cannot Find Icon: ' + this.iconName + ' (MenuSideButton)')
+			}
+		},
 		checkAction() {
 			if (Object.keys(this.items)) {
 				this.showDropItems = !this.showDropItems
@@ -132,6 +142,8 @@ export default {
 	border-radius: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	box-sizing: border-box;
 	cursor: pointer;
 
@@ -199,8 +211,7 @@ export default {
 
 		&.active {
 			flex-direction: column;
-			padding-top: 5px;
-			padding-bottom: 5px;
+			padding-top: 10px;
 		}
 	}
 

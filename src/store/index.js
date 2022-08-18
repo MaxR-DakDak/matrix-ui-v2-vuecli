@@ -15,7 +15,7 @@ const menu = {
 			{
 				action: () => {
 					console.log('test1')
-				}, icon: 'plus_icon.svg', tooltip: 'New Task'
+				}, icon: 'plus_icon.svg', tooaltip: 'New Task'
 			},
 			{
 				action: 'search', icon: 'search_icon.svg', tooltip: 'Search'
@@ -41,6 +41,7 @@ const menu = {
 				"items": {
 					"Task List": {
 						"title": "Task List",
+						"icon": "task_icon",
 						"items": {
 							"New Tasks": {
 								"title": "New Tasks",
@@ -74,6 +75,7 @@ const menu = {
 					},
 					"Companies": {
 						"title": "Companies",
+						"icon": "company_icon",
 						"items": {
 							"New Company": {
 								"title": "New Company",
@@ -87,6 +89,7 @@ const menu = {
 					},
 					"Orders": {
 						"title": "Orders",
+						"icon": "orders_icon",
 						"items": {
 							"Sales Orders": {
 								"title": "Sales Orders",
@@ -100,6 +103,7 @@ const menu = {
 					},
 					"Rebates": {
 						"title": "Rebates",
+						"icon": "rebate_icon",
 						"items": {
 							"New Rebate": {
 								"title": "New Rebate",
@@ -117,6 +121,7 @@ const menu = {
 				"items": {
 					"Stock": {
 						"title": "Stock",
+						"icon": "stock_icon",
 						"items": {
 							"Stock Summary": {
 								"title": "Stock Summary",
@@ -134,6 +139,7 @@ const menu = {
 					},
 					"Purchase Orders": {
 						"title": "Purchase Orders",
+						"icon": "orders_icon.svg",
 						"items": {
 							"Stock Summary": {
 								"title": "New Purchase Order",
@@ -155,6 +161,7 @@ const menu = {
 					},
 					"Labels": {
 						"title": "Labels",
+						"icon": "label_icon.svg",
 						"items": {
 							"Labels to Print": {
 								"title": "Labels to Print",
@@ -168,6 +175,7 @@ const menu = {
 					},
 					"Shipping": {
 						"title": "Shipping",
+						"icon": "shipping_icon.svg",
 						"items": {
 							"New Shipment": {
 								"title": "New Shipment",
@@ -189,6 +197,7 @@ const menu = {
 				"items": {
 					"Invoices": {
 						"title": "Invoices",
+						"icon": "invoices_icon.svg",
 						"items": {
 							"Invoice List": {
 								"title": "Invoice List",
@@ -210,6 +219,7 @@ const menu = {
 					},
 					"Warehouse": {
 						"title": "Warehouse",
+						"icon": "warehouse_icon.svg",
 						"items": {
 							"PZ/WZ": {
 								"title": "PZ/WZ",
@@ -223,6 +233,7 @@ const menu = {
 					},
 					"Sales Reports": {
 						"title": "Sales Reports",
+						"icon": "reports_icon.svg",
 						"items": {
 							"Buyer": {
 								"title": "Buyer",
@@ -252,6 +263,7 @@ const menu = {
 				"items": {
 					"Website": {
 						"title": "Website",
+						"icon": "website_icon.svg",
 						"items": {
 							"File Uploader": {
 								"title": "File Uploader",
@@ -289,6 +301,7 @@ const menu = {
 					},
 					"Quotation/Parts": {
 						"title": "Quotation/Parts",
+						"icon": "quotation_icon.svg",
 						"items": {
 							"Quotation Importer": {
 								"title": "Quotation Importer",
@@ -310,6 +323,7 @@ const menu = {
 					},
 					"Bug Tracker": {
 						"title": "Bug Tracker",
+						"icon": "bug_white_icon.svg",
 						"items": {
 							"Bug Tracker List": {
 								"title": "Bug Tracker List",
@@ -323,6 +337,7 @@ const menu = {
 					},
 					"Other": {
 						"title": "Other",
+						"icon": "other_icon.svg",
 						"items": {
 							"Add New Driver": {
 								"title": "Add New Driver",
