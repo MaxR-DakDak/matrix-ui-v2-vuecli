@@ -2,10 +2,11 @@
 	<div class="v_spacer"></div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
 	name: "VSpacer"
-}
+})
 </script>
 
 <style scoped>

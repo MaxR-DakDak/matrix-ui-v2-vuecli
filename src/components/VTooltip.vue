@@ -6,8 +6,9 @@
 	</span>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
 	name: "VTooltip",
 	data() {
 		return {
@@ -24,7 +25,7 @@ export default {
 	mounted() {
 		this.overflow()
 	},
-}
+})
 </script>
 
 <style>

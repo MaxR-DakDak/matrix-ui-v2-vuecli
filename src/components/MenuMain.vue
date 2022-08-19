@@ -21,13 +21,14 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import MenuMainButton from '@/components/MenuMainButton.vue'
 import MenuHamburger  from '@/components/MenuHamburger.vue'
-import VSpacer        from '@/components/VSpacer'
+import VSpacer        from '@/components/VSpacer.vue'
 import {mapGetters}   from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "MenuMain",
 	components: {
 		MenuMainButton,
@@ -37,7 +38,7 @@ export default {
 	computed: {
 		...mapGetters(['linksMainMenuGetAll', 'iconsMainMenuGetAll', 'uiGetAll'])
 	}
-}
+})
 </script>
 
 <style scoped>

@@ -35,13 +35,14 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import VSpacer        from "@/components/VSpacer";
 import MenuSideButton from "@/components/MenuSideButton.vue"
 import MenuMainButton from "@/components/MenuMainButton.vue"
 import {mapGetters}   from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "MenuSide",
 	components: {
 		MenuSideButton,
@@ -88,7 +89,7 @@ export default {
 	computed: {
 		...mapGetters(['linksSideMenuGetFiltered', 'linksMainMenuGetAll', 'uiGetAll'])
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>

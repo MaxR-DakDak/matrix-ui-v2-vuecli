@@ -4,15 +4,16 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import {mapGetters} from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "WindowMain",
 	computed: {
 		...mapGetters(['uiGetAll']),
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>

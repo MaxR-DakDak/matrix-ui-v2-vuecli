@@ -6,25 +6,31 @@
 	</div>
 </template>
 
-<script>
-import MenuMain                   from '@/components/MenuMain.vue'
-import MenuSide                   from '@/components/MenuSide.vue'
-import WindowMain                 from '@/components/WindowMain.vue'
+<script lang="ts">
+import Vue from "vue";
+import MenuMain from '@/components/MenuMain.vue'
+import MenuSide from '@/components/MenuSide.vue'
+import WindowMain from '@/components/WindowMain.vue'
 import {mapActions, mapMutations} from "vuex";
 
-export default {
+export default Vue.extend({
 	name: 'App',
 	components: {
 		MenuMain,
 		MenuSide,
 		WindowMain,
 	},
+	computed: {
+		test() {
+			return this.$store.state
+		}
+	},
 	methods: {
 		...mapMutations(['checkHash', 'checkMobileCss']),
 		...mapActions(['getSearchData']),
 	},
 	beforeMount() {
-		this.checkHash(window.location.hash.substring(1))
+		this.checkHash()
 		this.checkMobileCss()
 		this.getSearchData()
 	},
@@ -32,10 +38,10 @@ export default {
 		window.addEventListener('resize', this.checkMobileCss);
 
 		window.onhashchange = () => {
-			this.checkHash(window.location.hash.substring(1))
+			this.checkHash()
 		}
 	},
-}
+})
 </script>
 
 <style lang="scss">

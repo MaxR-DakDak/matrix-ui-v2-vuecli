@@ -20,12 +20,13 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import VTooltip                   from '@/components/VTooltip.vue'
 import MenuSearch                 from "@/components/MenuSearch";
 import {mapGetters, mapMutations} from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "MenuMainButton",
 	components: {
 		VTooltip,
@@ -51,7 +52,7 @@ export default {
 		...mapMutations(['checkHash']),
 		checkAction() {
 			if (this.button.link) {
-				this.checkHash(this.button.link, this.button.sideMenu)
+				window.location.hash = this.button.link
 			}
 			else if (this.button.action) {
 				if (this.button.action === 'search') {
@@ -81,7 +82,7 @@ export default {
 	mounted() {
 		this.checkHashLink()
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>

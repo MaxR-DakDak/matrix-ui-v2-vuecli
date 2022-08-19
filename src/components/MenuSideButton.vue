@@ -44,10 +44,11 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import {mapGetters} from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "MenuSideButton",
 	props: {
 		iconOnly: {
@@ -105,7 +106,7 @@ export default {
 				this.showDropItems = !this.showDropItems
 			}
 			else if (this.link) {
-				this.checkHash(this.link)
+				this.checkHash({state: this.link})
 			}
 			else if (this.action) {
 				alert('some action')
@@ -134,7 +135,7 @@ export default {
 	mounted() {
 		this.checkHashLink()
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -148,16 +149,16 @@ export default {
 	box-sizing: border-box;
 	cursor: pointer;
 
+	&:hover {
+		background-color: var(--dark-grey);
+	}
+
 	&.active {
 		background-color: var(--dark-grey);
 	}
 
 	&.small {
 		text-align: center;
-	}
-
-	&:hover {
-		background-color: var(--dark-grey);
 	}
 
 	&.selected {
@@ -279,7 +280,7 @@ export default {
 		}
 
 		&.selected {
-			background-color: var(--cyan);
+			background-color: var(--cyan) !important;
 		}
 
 		&:hover {

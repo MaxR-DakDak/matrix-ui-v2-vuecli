@@ -43,10 +43,11 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import {mapGetters} from "vuex";
 
-export default {
+export default Vue.extend({
 	name: "MenuSearch",
 	props: {
 		show: {
@@ -93,7 +94,7 @@ export default {
 	computed: {
 		...mapGetters(['searchDataGetAll']),
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>
