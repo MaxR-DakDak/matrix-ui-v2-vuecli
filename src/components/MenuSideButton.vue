@@ -5,7 +5,7 @@
 			<template v-if="checkIfIconExist()">
 				<img class="side_button__main-icon"
 				     :class="{grow: iconOnly}"
-				     :src="checkIfIconExist()"
+				     :src="iconSrc"
 				     alt="user">
 			</template>
 			<template v-else>
@@ -79,6 +79,7 @@ export default {
 	},
 	data() {
 		return {
+			iconSrc: null,
 			showDropItems: true,
 			selected: false,
 		}
@@ -92,8 +93,8 @@ export default {
 		checkIfIconExist() {
 			try {
 				const icon_name = this.iconName
-				const icon_file = require('@/assets/' + icon_name.replace('.svg', '') + '.svg')
-				return icon_file ? icon_file : false
+				this.iconSrc = require('@/assets/' + icon_name.replace('.svg', '') + '.svg')
+				return this.iconSrc
 			}
 			catch (e) {
 				console.log('Cannot Find Icon: ' + this.iconName + ' (MenuSideButton)')

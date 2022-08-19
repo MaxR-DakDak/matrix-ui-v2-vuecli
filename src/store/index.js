@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const menu = {
 	state: () => ({
 		linksMainMenu: [
-			{title: 'Orders', link: 'CurrentTasks', sideMenu: 'sales'},
+			{title: 'Sales/Marketing', link: 'CurrentTasks', sideMenu: 'sales'},
 			{title: 'Warehouse', link: 'StockSummary', sideMenu: 'warehouse'},
 			{title: 'Reports/Docs', link: 'InvoiceList', sideMenu: 'reports'},
 			{title: 'Others/Website', link: 'BugTrackerList', sideMenu: 'other'},
